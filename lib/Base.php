@@ -27,7 +27,7 @@ class Base {
   }
 
   public function send($payload, $opcode = 'text', $masked = false) {
-    if (!$this->is_connected) $this->connect(); /// @todo This is a client function, fixme!
+    if (!$this->is_connected) throw new \RuntimeException('You should call the connect() method first.');
 
     if (!in_array($opcode, array_keys(self::$opcodes))) {
       throw new BadOpcodeException("Bad opcode '$opcode'.  Try 'text' or 'binary'.");

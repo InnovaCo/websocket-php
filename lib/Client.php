@@ -30,7 +30,7 @@ class Client extends Base {
   /**
    * Perform WebSocket handshake
    */
-  protected function connect() {
+  public function connect() {
     $url_parts = parse_url($this->socket_uri);
     $scheme    = $url_parts['scheme'];
     $host      = $url_parts['host'];
