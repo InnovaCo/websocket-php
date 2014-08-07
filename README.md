@@ -37,6 +37,7 @@ require('vendor/autoload.php');
 use WebSocket\Client;
 
 $client = new Client("ws://echo.websocket.org/");
+$client->connect();
 $client->send("Hello WebSocket.org!");
 
 echo $client->receive(); // Will output 'Hello WebSocket.org!'
