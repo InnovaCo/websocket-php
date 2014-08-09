@@ -62,6 +62,8 @@ class Client extends Base {
       );
     }
 
+    $this->setTimeout($this->options['timeout']);
+
     $authHeader = '';
     if ($user || $pass) {
         $authHeader = 'Authorization: Basic ' . base64_encode($user . ':' . $pass) . "\r\n";
