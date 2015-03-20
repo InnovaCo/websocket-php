@@ -76,7 +76,7 @@ class Client extends Base {
       . (array_key_exists('origin', $this->options) ? "Origin: {$this->options['origin']}\r\n" : '')
       . "Host: " . $host . "\r\n"
       . "Sec-WebSocket-Key: " . $key . "\r\n"
-      . "User-Agent: websocket-client-php\r\n"
+      . "User-Agent: " . (isset($this->options['user-agent']) ? $this->options['user-agent'] : "websocket-client-php") . "\r\n"
       . "Upgrade: websocket\r\n"
       . "Connection: Upgrade\r\n"
       . "Sec-WebSocket-Version: 13\r\n"
